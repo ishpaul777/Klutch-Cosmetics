@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+// import { MuiTypography } from './Components/Mui-typography';
 import './App.css';
+// import MuiButtons from './Components/MuiButtons';
+import { createTheme, ThemeProvider } from '@mui/material';
+import Hero from './Components/Pages/Home Page/Hero';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#293D45',
+      light: '#53636a',
+      dark: '#1c2a30',
+    },
+    secondary: {
+      main: '#A67744',
+    },
+  },
+  typography: {
+    fontFamily: 'SegoeUI, Segoe UI',
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        {/* <MuiTypography /> */}
+        {/* <MuiButtons /> */}
+        <Hero />
+      </div>
+    </ThemeProvider>
   );
 }
 
